@@ -1,0 +1,59 @@
+* {margin:0; padding:0; box-sizing:border-box;}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #ffd6e8, #fff0f6);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.screen {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+}
+
+.screen.active {display:flex; animation:fadeIn 0.5s ease;}
+
+.title {font-family:'Pacifico', cursive; color:#ff5a8a; font-size:28px; margin-bottom:15px;}
+.cat {font-size:40px; margin:10px 0;}
+p {font-size:16px; line-height:1.6; color:#444; margin:10px 0; max-width:500px;}
+
+button {
+  margin-top:20px; padding:12px 30px; border:none; border-radius:25px;
+  background:#ff5a8a; color:white; font-size:16px; cursor:pointer; transition:transform 0.2s;
+}
+button:hover {transform:scale(1.05);}
+button.hidden {display:none;}
+
+.slideshow-container {width:90%; max-width:400px; margin:20px 0; position:relative;}
+.slide {width:100%; display:none; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+
+.game-container {display:flex; flex-direction:column; align-items:center; gap:10px; margin:20px 0;}
+.box-row {display:flex; gap:10px;}
+.chocolate-box {width:80px; height:80px; background:#ffb3c1; border-radius:10px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; cursor:pointer;
+  position:relative; transition:transform 0.2s; border:2px solid #ff5a8a;}
+.chocolate-box:hover {transform:scale(1.05);}
+.box-number {position:absolute; top:5px; left:5px; font-size:12px; color:#ff5a8a; font-weight:bold;}
+.box-content {font-size:24px;}
+.chocolate-box.opened {background:#ffd6e8; cursor:default;}
+.chocolate-box.chocolate {background:#ffcc99; animation:found 0.5s ease;}
+.chocolate-box.x {background:#ff9999;}
+.game-message {min-height:50px; font-weight:600; color:#ff5a8a; margin-top:10px;}
+
+@keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
+@keyframes found {0%,100%{transform:scale(1);} 50%{transform:scale(1.2);}}
+
+.stars {position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:-1;}
+.star {position:absolute; background:white; border-radius:50%; animation:twinkle 3s infinite;}
+@keyframes twinkle {0%,100%{opacity:0.3;} 50%{opacity:1;}}

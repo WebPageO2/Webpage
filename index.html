@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For My Lovely Sister</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Stars background -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Screen 1: Intro -->
+  <div class="screen active" id="screen1">
+    <h1 class="title">Hey Sis ❤️</h1>
+    <div class="cat">🐱🐾</div>
+    <p>I made something special for you</p>
+    <button onclick="nextScreen()">Start</button>
+  </div>
+
+  <!-- Screen 2: Message -->
+  <div class="screen" id="screen2">
+    <h1 class="title">From your brother ✨</h1>
+    <p>
+      You always make everything brighter and happier.<br>
+      I really am lucky to have you.<br><br>
+      Having you as my sister is one of the best things in my life.<br>
+      No matter how far we are,<br>
+      or how busy life gets,<br>
+      you're always someone I think of,<br>
+      someone who matters to me more than words can explain.<br><br>
+      Thank you for being you.
+    </p>
+    <button onclick="nextScreen()">Next</button>
+  </div>
+
+  <!-- Screen 3: Slideshow -->
+  <div class="screen" id="screen3">
+    <h1 class="title">Us 💖</h1>
+    <div class="slideshow-container">
+      <img src="images/pic1.jpg" class="slide" alt="Pic 1">
+      <img src="images/pic2.jpg" class="slide" alt="Pic 2">
+      <img src="images/pic3.jpg" class="slide" alt="Pic 3">
+      <img src="images/pic4.jpg" class="slide" alt="Pic 4">
+      <img src="images/pic5.jpg" class="slide" alt="Pic 5">
+    </div>
+  </div>
+
+  <!-- Screen 4: Game -->
+  <div class="screen" id="screen4">
+    <h1 class="title">Find 3 Chocolates 🍫</h1>
+    <p class="game-instruction">Click on the boxes to find all 3 chocolates!</p>
+
+    <div class="game-container">
+      <div class="box-row">
+        <div class="chocolate-box" onclick="openBox(1)" id="box1"><span class="box-number">1</span><div class="box-content" id="content1">?</div></div>
+        <div class="chocolate-box" onclick="openBox(2)" id="box2"><span class="box-number">2</span><div class="box-content" id="content2">?</div></div>
+        <div class="chocolate-box" onclick="openBox(3)" id="box3"><span class="box-number">3</span><div class="box-content" id="content3">?</div></div>
+      </div>
+      <div class="box-row">
+        <div class="chocolate-box" onclick="openBox(4)" id="box4"><span class="box-number">4</span><div class="box-content" id="content4">?</div></div>
+        <div class="chocolate-box" onclick="openBox(5)" id="box5"><span class="box-number">5</span><div class="box-content" id="content5">?</div></div>
+        <div class="chocolate-box" onclick="openBox(6)" id="box6"><span class="box-number">6</span><div class="box-content" id="content6">?</div></div>
+      </div>
+      <div class="box-row">
+        <div class="chocolate-box" onclick="openBox(7)" id="box7"><span class="box-number">7</span><div class="box-content" id="content7">?</div></div>
+        <div class="chocolate-box" onclick="openBox(8)" id="box8"><span class="box-number">8</span><div class="box-content" id="content8">?</div></div>
+        <div class="chocolate-box" onclick="openBox(9)" id="box9"><span class="box-number">9</span><div class="box-content" id="content9">?</div></div>
+      </div>
+    </div>
+
+    <p class="game-message" id="gameMessage">Click a box to reveal it!</p>
+    <button onclick="nextFromGame()" id="nextGameButton" class="hidden">Next</button>
+  </div>
+
+  <!-- Screen 5: Final -->
+  <div class="screen" id="screen5">
+    <h1 class="title">Thank You 😸</h1>
+    <div class="cat">🐱💕✨</div>
+    <p>
+      Thank you for always being there.<br>
+      For always caring and supporting me.<br><br>
+      I know you get busy and stressed,<br>
+      so I made this to make you smile.<br><br>
+      Love you forever 💖
+    </p>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
